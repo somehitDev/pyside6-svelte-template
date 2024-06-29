@@ -4,8 +4,10 @@
 
 
 ## 🛠️ Requirements
-- briefcase(for build)
-- PySide6
+- python 3.9 or newer
+  - briefcase(for build)
+  - PySide6
+- node.js(latest stable)  
 
 <br>
 

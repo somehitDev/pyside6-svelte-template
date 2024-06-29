@@ -1,0 +1,19 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource>
+        <file>index.html</file>
+        <file>favicon.png</file>
+        <file>_app/version.json</file>
+        <file>_app/env.js</file>
+        <file>_app/immutable/nodes/2.C2Bfa9Qg.js</file>
+        <file>_app/immutable/nodes/1.zLStOX18.js</file>
+        <file>_app/immutable/nodes/0.DtZsSsLq.js</file>
+        <file>_app/immutable/entry/start.NpbqKfNU.js</file>
+        <file>_app/immutable/entry/app.5QGne8v0.js</file>
+        <file>_app/immutable/chunks/scheduler.BvLojk_z.js</file>
+        <file>_app/immutable/chunks/index.DuEc2aQr.js</file>
+        <file>_app/immutable/chunks/entry.B8jGtttG.js</file>
+        <file>_app/immutable/assets/_page.B5yNRqTD.css</file>
+        <file>_app/immutable/assets/2.B5yNRqTD.css</file>
+    </qresource>
+</RCC>

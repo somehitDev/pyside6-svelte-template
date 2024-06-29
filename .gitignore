@@ -1,0 +1,15 @@
+.vscode
+env
+build
+dist/*.dmg
+dist/*.msi
+dist/*.exe
+dist/*.deb
+dist/*.rpm
+logs
+__pycache__
+*.dist-info
+.svelte-kit
+node_modules
+package-lock.json
+._*

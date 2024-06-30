@@ -5,7 +5,9 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "node build.pre.js && vite build && node build.post.js",
-		"preview": "vite preview"
+		"preview": "vite preview",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^3.0.0",
@@ -14,6 +16,9 @@
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
 		"glob": "^10.4.2",
 		"svelte": "^4.2.7",
+		"svelte-check": "^3.6.0",
+		"tslib": "^2.4.1",
+		"typescript": "^5.0.0",
 		"vite": "^5.0.3"
 	},
 	"type": "module"

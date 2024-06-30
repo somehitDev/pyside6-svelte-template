@@ -1,4 +1,6 @@
 # PySide6 Webview Svelte Template Release Notes
 
-## 0.0.1 (2024/06/30)
+## 0.0.1 (2024/06/29)
 - Initial release
+- 2024/06/30
+  - handle `qt.qpa.plugin` error.

@@ -2,8 +2,14 @@
 """
 Template of PySide6.QWebEngineView and Svelte
 """
-import pathlib
+import os, pathlib
 from datetime import datetime
+
+# qt.qpa.plugin: Could not find the Qt platform plugin "windows" in ""
+# This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem
+from PySide6 import __path__ as pyside6_path
+os.environ["QT_QPA_PLATFORM_PLUGIN_PATH"] = os.path.join(pyside6_path[0], "Qt", "plugins", "platforms")
+
 from PySide6.QtCore import QObject, Slot, Signal, QTimer, QUrl
 from PySide6.QtWidgets import QApplication, QMainWindow
 from PySide6.QtWebEngineWidgets import QWebEngineView

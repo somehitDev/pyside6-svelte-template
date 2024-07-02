@@ -10,7 +10,7 @@ from datetime import datetime
 from PySide6 import __path__ as pyside6_path
 os.environ["QT_QPA_PLATFORM_PLUGIN_PATH"] = os.path.join(pyside6_path[0], "Qt", "plugins", "platforms")
 
-from PySide6.QtCore import QObject, Slot, Signal, QTimer, QUrl
+from PySide6.QtCore import Slot, Signal, QTimer, QUrl
 from PySide6.QtWidgets import QApplication, QMainWindow
 from PySide6.QtWebEngineWidgets import QWebEngineView
 from PySide6.QtWebChannel import QWebChannel

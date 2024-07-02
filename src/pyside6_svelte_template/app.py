@@ -18,25 +18,9 @@ from . import __path__
 
 
 root_dir = pathlib.Path(__path__[0]).resolve()
-class Bridge(QObject):
+class MainWindow(QMainWindow):
     show_timestamp = Signal(str)
 
-    def __init__(self):
-        super().__init__()
-
-        self.timer = QTimer()
-        self.timer.timeout.connect(self.send_timestamp)
-        self.timer.start(1000)
-
-    @Slot(int)
-    def show_count(self, count:int):
-        print(f"current count: {count}")
-
-    @Slot()
-    def send_timestamp(self):
-        self.show_timestamp.emit(datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ"))
-
-class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
 
@@ -46,14 +30,29 @@ class MainWindow(QMainWindow):
         self.webview = QWebEngineView()
         self.channel = QWebChannel()
 
-        self.bridge = Bridge()
-        self.channel.registerObject("bridge", self.bridge)
+        self.channel.registerObject("bridge", self)
 
         self.webview.page().setWebChannel(self.channel)
 
+        self.setCentralWidget(self.webview)
+
+    def showEvent(self, ev):
+        self.timer = QTimer()
+        self.timer.timeout.connect(self.send_timestamp)
+        self.timer.start(1000)
+
         self.webview.setUrl(QUrl("qrc:/index.html"))
 
-        self.setCentralWidget(self.webview)
+        super().showEvent(ev)
+
+    @Slot(int)
+    def show_count(self, count:int):
+        print(f"current count: {count}")
+
+    @Slot()
+    def send_timestamp(self):
+        self.show_timestamp.emit(datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ"))
+
 
 def main():
     import sys
@@ -64,7 +63,7 @@ def main():
         if msg_type == QtMsgType.QtCriticalMsg:
             print(msg_string)
 
-    app = QApplication(sys.argv + [ "--remote-debugging-port=9999" ])
+    app = QApplication(sys.argv + [ "--webEngineArgs", "--remote-debugging-port=9999" ])
 
     qInstallMessageHandler(empty_message_handler)
 

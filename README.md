@@ -24,11 +24,13 @@ npm run build
 ```zsh
 briefcase dev
 ```
-※ for now, raise error duing build from **signcode** from mac!
+~~※ for now, raise error duing build from **signcode** from mac!~~
 <br>
-plase check those issues
-- https://github.com/beeware/briefcase/issues/1537
-- https://github.com/beeware/briefcase/issues/1891
+~~plase check those issues~~
+~~https://github.com/beeware/briefcase/issues/1537~~
+~~https://github.com/beeware/briefcase/issues/1891~~
+
+it solved! nevermind until now!
 
 <br>
 
